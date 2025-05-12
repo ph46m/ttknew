@@ -11,7 +11,6 @@
       box-sizing: border-box;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
-
     html, body {
       height: 100%;
       background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
@@ -19,14 +18,12 @@
       overflow: hidden;
       touch-action: manipulation;
     }
-
     .container {
       width: 100vw;
       height: 100vh;
       display: flex;
       position: relative;
     }
-
     .sidebar {
       width: 100px;
       height: 100%;
@@ -42,11 +39,9 @@
       box-shadow: 4px 0 20px rgba(0, 212, 255, 0.3);
       transition: width 0.3s ease;
     }
-
     .sidebar:hover {
       width: 200px;
     }
-
     .sidebar .logo {
       font-size: 28px;
       margin-bottom: 30px;
@@ -56,11 +51,9 @@
       text-shadow: 0 0 10px #00d4ff;
       transition: opacity 0.3s ease;
     }
-
     .sidebar:hover .logo {
       opacity: 1;
     }
-
     .sidebar a {
       color: #fff;
       text-decoration: none;
@@ -73,29 +66,24 @@
       transition: all 0.3s ease;
       width: 100%;
     }
-
     .sidebar a:hover, .sidebar a.active {
       opacity: 1;
       transform: scale(1.2);
       color: #a100ff;
       text-shadow: 0 0 15px #a100ff;
     }
-
     .sidebar a span:first-child {
       font-size: 28px;
     }
-
     .sidebar a span:last-child {
       margin-top: 5px;
       display: none;
       transition: opacity 0.3s ease;
     }
-
     .sidebar:hover a span:last-child {
       display: block;
       opacity: 1;
     }
-
     .video-wrapper {
       position: fixed;
       top: 50%;
@@ -112,13 +100,11 @@
       display: flex;
       flex-direction: column;
     }
-
     video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
     .feedback {
       position: fixed;
       bottom: 20px;
@@ -131,7 +117,6 @@
       display: none;
       z-index: 5;
     }
-
     .overlay {
       position: absolute;
       top: 0;
@@ -145,20 +130,82 @@
       pointer-events: none;
       background: linear-gradient(to bottom, rgba(26, 26, 26, 0.7) 0%, transparent 25%, transparent 75%, rgba(26, 26, 26, 0.7) 100%);
     }
-
     .header {
       display: flex;
       align-items: center;
-      justify-content: flex-end; /* Alinha o conteúdo à direita */
+      justify-content: space-between;
       padding: 15px;
       pointer-events: auto;
     }
-
+    .header .search-bar {
+      flex-grow: 1;
+      margin-left: 15px;
+      position: relative;
+    }
+    .header .search-bar input {
+      width: 100%;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: background 0.3s ease;
+    }
+    .header .search-bar input:focus {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .header .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #2d2d2d;
+      border-radius: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+      z-index: 6;
+    }
+    .header .search-suggestions.active {
+      display: block;
+    }
+    .header .search-suggestions div {
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .header .search-suggestions div:hover {
+      background: #3d3d5d;
+    }
+    .header .search-results {
+      position: absolute;
+      top: 100%;
+      left: 15px;
+      right: 15px;
+      background: #2d2d2d;
+      border-radius: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+      z-index: 5;
+    }
+    .header .search-results.active {
+      display: block;
+    }
+    .header .search-results div {
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .header .search-results div:hover {
+      background: #3d3d5d;
+    }
     .header .user {
       display: flex;
       align-items: center;
     }
-
     .header .user img {
       width: 24px;
       height: 24px;
@@ -167,12 +214,10 @@
       box-shadow: 0 0 10px #00d4ff;
       cursor: pointer;
     }
-
     .content {
       padding: 15px;
       position: relative;
     }
-
     .info {
       position: absolute;
       bottom: 15px;
@@ -180,17 +225,14 @@
       right: 15px;
       pointer-events: auto;
     }
-
     .caption-wrapper {
       position: relative;
       max-height: 60px;
       overflow: hidden;
     }
-
     .caption-wrapper.expanded {
       max-height: none;
     }
-
     .info p {
       font-size: 16px;
       line-height: 1.5;
@@ -199,11 +241,10 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(161, 0, 255, 0.3);
     }
-
     .see-more {
       position: absolute;
       bottom: 0;
-      right FOCUS: 15px;
+      right: 15px;
       background: rgba(45, 45, 45, 0.9);
       color: #a100ff;
       font-size: 12px;
@@ -213,13 +254,11 @@
       pointer-events: auto;
       transition: all 0.3s ease;
     }
-
     .see-more:hover {
       transform: scale(1.1);
       background: #a100ff;
       color: #fff;
     }
-
     .info .music {
       display: flex;
       align-items: center;
@@ -229,12 +268,10 @@
       opacity: 0.95;
       text-shadow: 0 0 5px #00d4ff;
     }
-
     .info .music::before {
       content: '♪';
       font-size: 18px;
     }
-
     .actions {
       position: absolute;
       right: 15px;
@@ -245,7 +282,6 @@
       align-items: center;
       pointer-events: auto;
     }
-
     .actions button,
     .actions a {
       background: none;
@@ -256,13 +292,11 @@
       text-decoration: none;
       transition: transform 0.3s ease;
     }
-
     .actions button:hover,
     .actions a:hover {
       transform: scale(1.2);
       color: #00d4ff;
     }
-
     .actions a.download-btn {
       background: linear-gradient(45deg, #00d4ff, #a100ff);
       border-radius: 50%;
@@ -274,19 +308,16 @@
       box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .actions a.download-btn:hover {
       transform: scale(1.2) translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 212, 255, 0.6);
       color: #fff;
     }
-
     .actions span {
       font-size: 12px;
       text-align: center;
       color: #a100ff;
     }
-
     .play-pause-btn {
       position: absolute;
       top: 50%;
@@ -309,12 +340,10 @@
       transition: opacity 0.3s ease, transform 0.3s ease;
       box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
     }
-
     .play-pause-btn.visible {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1.1);
     }
-
     .comments-section {
       position: fixed;
       bottom: 0;
@@ -331,38 +360,32 @@
       border-top: 2px solid #a100ff;
       box-shadow: 0 -5px 15px rgba(161, 0, 255, 0.3);
     }
-
     .comment {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 15px;
     }
-
     .comment img {
       width: 30px;
       height: 30px;
       border-radius: 50%;
       border: 2px solid #00d4ff;
     }
-
     .comment p {
       font-size: 16px;
       color: #fff;
       cursor: pointer;
       transition: color 0.3s ease;
     }
-
     .comment p:hover {
       color: #a100ff;
     }
-
     .comment-input {
       display: flex;
       gap: 10px;
       margin-top: 15px;
     }
-
     .comment-input input {
       flex-grow: 1;
       padding: 10px;
@@ -373,7 +396,6 @@
       font-size: 14px;
       box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
     }
-
     .comment-input button {
       padding: 10px 15px;
       border: none;
@@ -385,21 +407,13 @@
       box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
       transition: transform 0.3s ease;
     }
-
     .comment-input button:hover {
       transform: scale(1.05);
     }
-
     @media (max-width: 600px) {
       .sidebar {
-        width: 80px; /* Reduz a largura para telas menores */
-        display: flex; /* Mantém a sidebar visível */
+        display: none;
       }
-
-      .sidebar:hover {
-        width: 150px; /* Ajusta a largura ao passar o mouse em telas menores */
-      }
-
       .video-wrapper {
         width: 100%;
         height: 100%;
@@ -409,7 +423,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
-
       video {
         width: 100%;
         height: 100%;
@@ -424,7 +437,442 @@
       <div class="logo">VibeFlow</div>
       <a href="/" class="active"><span>🏠</span><span>Lobby</span></a>
       <a href="/perfil"><span>👤</span><span>Perfil</span></a>
-    </div>
+      <a href="/login"><span>🔐</span><span>Login</span></a>
+      <a href="/registro"><span>📝</span><span>Registro</span></a>
+      <a href="#"><span>⋯</span><span>Mais</span></a>
+    </div><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>VibeFlow</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    html, body {
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+      color: #fff;
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      position: relative;
+    }
+    .sidebar {
+      width: 100px;
+      height: 100%;
+      background: linear-gradient(180deg, #1e1e2f, #2a2a44);
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      z-index: 4;
+      box-shadow: 4px 0 20px rgba(0, 212, 255, 0.3);
+      transition: width 0.3s ease;
+    }
+    .sidebar:hover {
+      width: 200px;
+    }
+    .sidebar .logo {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #00d4ff;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #00d4ff;
+      transition: opacity 0.3s ease;
+    }
+    .sidebar:hover .logo {
+      opacity: 1;
+    }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 25px 0;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .sidebar a:hover, .sidebar a.active {
+      opacity: 1;
+      transform: scale(1.2);
+      color: #a100ff;
+      text-shadow: 0 0 15px #a100ff;
+    }
+    .sidebar a span:first-child {
+      font-size: 28px;
+    }
+    .sidebar a span:last-child {
+      margin-top: 5px;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+    .sidebar:hover a span:last-child {
+      display: block;
+      opacity: 1;
+    }
+    .video-wrapper {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      aspect-ratio: 9 / 19.5;
+      max-width: 80%;
+      max-height: 100vh;
+      overflow-y: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(161, 0, 255, 0.2);
+      background: #1a1a1a;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .feedback {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(45, 45, 45, 0.8);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      display: none;
+      z-index: 5;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(26, 26, 26, 0.7) 0%, transparent 25%, transparent 75%, rgba(26, 26, 26, 0.7) 100%);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      pointer-events: auto;
+    }
+    .header .search-bar {
+      flex-grow: 1;
+      margin-left: 15px;
+      position: relative;
+    }
+    .header .search-bar input {
+      width: 100%;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: background 0.3s ease;
+    }
+    .header .search-bar input:focus {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .header .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #2d2d2d;
+      border-radius: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+      z-index: 6;
+    }
+    .header .search-suggestions.active {
+      display: block;
+    }
+    .header .search-suggestions div {
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .header .search-suggestions div:hover {
+      background: #3d3d5d;
+    }
+    .header .search-results {
+      position: absolute;
+      top: 100%;
+      left: 15px;
+      right: 15px;
+      background: #2d2d2d;
+      border-radius: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+      z-index: 5;
+    }
+    .header .search-results.active {
+      display: block;
+    }
+    .header .search-results div {
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .header .search-results div:hover {
+      background: #3d3d5d;
+    }
+    .header .user {
+      display: flex;
+      align-items: center;
+    }
+    .header .user img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #00d4ff;
+      box-shadow: 0 0 10px #00d4ff;
+      cursor: pointer;
+    }
+    .content {
+      padding: 15px;
+      position: relative;
+    }
+    .info {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      pointer-events: auto;
+    }
+    .caption-wrapper {
+      position: relative;
+      max-height: 60px;
+      overflow: hidden;
+    }
+    .caption-wrapper.expanded {
+      max-height: none;
+    }
+    .info p {
+      font-size: 16px;
+      line-height: 1.5;
+      background: rgba(45, 45, 45, 0.8);
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(161, 0, 255, 0.3);
+    }
+    .see-more {
+      position: absolute;
+      bottom: 0;
+      right: 15px;
+      background: rgba(45, 45, 45, 0.9);
+      color: #a100ff;
+      font-size: 12px;
+      padding: 5px 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: all 0.3s ease;
+    }
+    .see-more:hover {
+      transform: scale(1.1);
+      background: #a100ff;
+      color: #fff;
+    }
+    .info .music {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      margin-top: 10px;
+      opacity: 0.95;
+      text-shadow: 0 0 5px #00d4ff;
+    }
+    .info .music::before {
+      content: '♪';
+      font-size: 18px;
+    }
+    .actions {
+      position: absolute;
+      right: 15px;
+      bottom: 20vh;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      pointer-events: auto;
+    }
+    .actions button,
+    .actions a {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .actions button:hover,
+    .actions a:hover {
+      transform: scale(1.2);
+      color: #00d4ff;
+    }
+    .actions a.download-btn {
+      background: linear-gradient(45deg, #00d4ff, #a100ff);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .actions a.download-btn:hover {
+      transform: scale(1.2) translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.6);
+      color: #fff;
+    }
+    .actions span {
+      font-size: 12px;
+      text-align: center;
+      color: #a100ff;
+    }
+    .play-pause-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(45, 45, 45, 0.7);
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      color: #00d4ff;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      opacity: 0;
+      pointer-events: auto;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    }
+    .play-pause-btn.visible {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    .comments-section {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 600px;
+      background: linear-gradient(to top, #2a2a44, #1e1e2f);
+      padding: 15px;
+      max-height: 35vh;
+      overflow-y: auto;
+      display: none;
+      z-index: 5;
+      border-top: 2px solid #a100ff;
+      box-shadow: 0 -5px 15px rgba(161, 0, 255, 0.3);
+    }
+    .comment {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .comment img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #00d4ff;
+    }
+    .comment p {
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .comment p:hover {
+      color: #a100ff;
+    }
+    .comment-input {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .comment-input input {
+      flex-grow: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #2a2a44;
+      color: #fff;
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+    }
+    .comment-input button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #00d4ff, #a100ff);
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+      transition: transform 0.3s ease;
+    }
+    .comment-input button:hover {
+      transform: scale(1.05);
+    }
+    @media (max-width: 600px) {
+      .sidebar {
+        display: none;
+      }
+      .video-wrapper {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  </style>
+</head>
 <div class="video-wrapper">
       <video id="videoPlayer" autoplay playsinline>
         <source src="" type="video/mp4" />
