@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VibeFlow</title>
   <style>
     * {
@@ -12,9 +12,10 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       background-color: #121212;
-      color: #fff;
+      color: #ffffff;
+      line-height: 1.6;
     }
 
     .container {
@@ -22,9 +23,8 @@
       min-height: 100vh;
     }
 
+    /* Sidebar */
     .sidebar {
-      display: flex;
-      flex-direction: column;
       background-color: #1e1e1e;
       width: 80px;
       padding: 1rem 0;
@@ -32,8 +32,11 @@
       top: 0;
       left: 0;
       height: 100vh;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      z-index: 999;
+      z-index: 1000;
+      transition: width 0.3s;
     }
 
     .sidebar .logo {
@@ -41,69 +44,93 @@
       font-weight: bold;
       margin-bottom: 2rem;
       color: #ff4081;
+      text-align: center;
     }
 
     .sidebar a {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0.8rem 0;
+      padding: 1rem 0;
       text-decoration: none;
-      color: #ccc;
-      transition: color 0.3s;
+      color: #cccccc;
       font-size: 0.9rem;
+      width: 100%;
+      transition: all 0.3s ease;
     }
 
-    .sidebar a.active,
-    .sidebar a:hover {
+    .sidebar a:hover,
+    .sidebar a.active {
       color: #ff4081;
+      background-color: rgba(255,milliampere(255, 64, 129, 0.1);
     }
 
-    .sidebar a span {
-      display: block;
+    /* Main Content */
+    .main-content {
+      margin-left: 80px;
+      padding: 2rem;
+      width: calc(100% - 80px);
+      flex: 1;
     }
 
-    /* Video Central */
     video {
       width: 100%;
-      height: 100%;
+      height: auto;
+      max-height: 70vh;
       object-fit: contain;
+      background-color: #000;
     }
 
-    /* Responsivo: menu inferior em telas pequenas */
+    /* Responsive Design */
     @media (max-width: 768px) {
       .sidebar {
         flex-direction: row;
-        justify-content: space-around;
         width: 100%;
         height: 60px;
         bottom: 0;
         top: auto;
         padding: 0;
+        justify-content: space-around;
       }
 
       .sidebar .logo {
         display: none;
       }
 
+      .sidebar a {
+        padding: 0.5rem;
+      }
+
       .sidebar a span:last-child {
-        display: none; /* Oculta texto, deixa só o ícone */
+        display: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+        margin-bottom: 60px;
+        width: 100%;
+      }
+    }
+
+    /* Tablet and larger mobile devices */
+    @media (max-width: 1024px) {
+      .main-content {
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="sidebar">
+    <nav class="sidebar">
       <div class="logo">VibeFlow</div>
       <a href="/" class="active"><span>🏠</span><span>Lobby</span></a>
       <a href="/perfil"><span>👤</span><span>Perfil</span></a>
       <a href="/login"><span>🔐</span><span>Login</span></a>
       <a href="/registro"><span>📝</span><span>Registro</span></a>
       <a href="#"><span>⋯</span><span>Mais</span></a>
-    </div>
-
-    <!-- Conteúdo principal pode ir aqui -->
+    </nav>
+  </div>
 <div class="video-wrapper">
       <video id="videoPlayer" autoplay playsinline>
         <source src="" type="video/mp4" />
